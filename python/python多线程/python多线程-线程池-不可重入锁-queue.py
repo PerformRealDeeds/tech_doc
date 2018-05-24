@@ -1,5 +1,5 @@
-from concurrent.futures import *
-import  threading
+from concurrent.futures import * #线程池
+import  threading   #锁
 
 
 
@@ -9,17 +9,15 @@ num=0
 print("执行前num:%s",num)
 
 def add(i):
-    global num
     for index in range(1000000):
          lock.acquire()
          try:
-            num = num + i
+            num = num + i  #无局部变量num,会找全局变量num
             num = num + i
          finally:
              lock.release()
 
 def sub(i):
-    global num
     for index in range(1000000):
         lock.acquire()
         try:
