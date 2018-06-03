@@ -1,3 +1,4 @@
+<pre>
 docker                 #查看所有命令
 docker -v / --version / info  #显示docker信息
 docker run  hello-world #执行docker镜像
@@ -20,3 +21,4 @@ docker login             # Log in this CLI session using your Docker credentials
 docker tag <image> username/repository:tag  # Tag <image> for upload to registry
 docker push username/repository:tag            # Upload tagged image to registry
 docker run username/repository:tag                   # Run image from a registry
+</pre>
