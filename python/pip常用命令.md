@@ -1,1 +1,1 @@
-1. 安装本地python库：pip install PyHive-0.5.2.tar.gz --no-index --find-links=file:///D:/path/to/dir
+1. 安装本地python库：pip install D:/path/to/dir/PyHive-0.5.2.tar.gz --no-index --find-links=file:///D:/path/to/dir
