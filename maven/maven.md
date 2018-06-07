@@ -20,8 +20,8 @@
 
 
 ---
-## 可执行jar配置
-[可执行jar配置](http://blog.51cto.com/coffee/2091717)
+## 可执行jar配置和依赖入jar包
+[可执行jar配置和依赖入jar包](http://blog.51cto.com/coffee/2091717)
 
     <build>
         <finalName>your_file_name</finalName>
