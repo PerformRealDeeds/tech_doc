@@ -64,5 +64,30 @@
 
 
 
----
+
 ## 生命周期
+
+
+
+
+
+## maven pom配置
+##  配置maven 使用的jdk版本
+
+        <properties>
+            <java-version>1.8</java-version>
+        </properties>
+
+       <build>
+            <plugins>
+                  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                      <source>${java-version}</source>
+                      <target>${java-version}</target>
+                    </configuration>
+                  </plugin>
+            </plugins>           
+        </build>
