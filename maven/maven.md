@@ -55,14 +55,106 @@
         </plugins>
     </build>
 
+## 获取某个jar中的部分文件
+将dubbo.jar中META-INF/assembly/目录下的文件放到自己的工程目录下。
+    <plugin>
+    	<artifactId>maven-dependency-plugin</artifactId>
+    	<executions>
+    		<execution>
+    			<id>unpack</id>
+    			<phase>package</phase>
+    			<goals>
+    				<goal>unpack</goal>
+    			</goals>
+    			<configuration>
+    				<artifactItems>
+    					<artifactItem>
+    						<groupId>com.alibaba</groupId>
+    						<artifactId>dubbo</artifactId>
+    						<version>${project.parent.version}</version>
+    						<outputDirectory>${project.build.directory}/dubbo</outputDirectory>
+    						<includes>META-INF/assembly/**</includes>
+    					</artifactItem>
+    				</artifactItems>
+    			</configuration>
+    		</execution>
+    	</executions>
+    </plugin>
+
+## 修改Maven默认的JDK版本
+1. 在maven的pom.xml中添加以下代码指定jdk版本
+
+        <build>    
+            <pluginManagement>    
+                <plugins>    
+                 <plugin>      
+                    <groupId>org.apache.maven.plugins</groupId>      
+                    <artifactId>maven-compiler-plugin</artifactId>      
+                    <configuration>      
+                        <source>1.7</source>      
+                        <target>1.7</target>      
+                    </configuration>      
+                </plugin>      
+               </plugins>    
+            </pluginManagement>    
+        </build>    
+
+2. 在maven的安装目录找到settings.xml文件，在里面添加如下代码
+
+        profile>      
+             <id>jdk-1.7</id>      
+              <activation>      
+                   <activeByDefault>true</activeByDefault>      
+                   <jdk>1.7</jdk>      
+               </activation>      
+         <properties>      
+        maven.compiler.source>1.7</maven.compiler.source>      
+        maven.compiler.target>1.7</maven.compiler.target>      
+        maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>             
+        </properties>      
+        </profile>    
+
+设置完成后，右键项目->maven->update project,这样每次新建maven项目都默认为jdk1.7版本了  
+
+
 ---
 ## 常用命令
 * mvn clean install -DskipTests
   *  -DskipTests:不执行测试用例，但编译测试用例类生成相应的class文件至target/test-classes下。
   *  -Dmaven.test.skip=true，不执行测试用例，也不编译测试用例类。
 
-
+----
 
 
 ---
 ## 生命周期
+
+
+---
+## maven插件
+[maven-assembly-plugin例子](https://maven.apache.org/plugins/maven-assembly-plugin/examples/single/filtering-some-distribution-files.html)
+
+
+
+
+
+## maven 设置编译版本为java8 设置字符集为utf8
+    <project>  
+    
+        ...  
+    
+        <properties>  
+            <maven.compiler.source>1.8</maven.compiler.source>  
+            <maven.compiler.target>1.8</maven.compiler.target>  
+            <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>  
+        </properties>  
+    
+        ...  
+    
+    </project>  
+
+
+
+
+
+    

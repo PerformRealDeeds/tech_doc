@@ -351,7 +351,21 @@ presto不能读impala建的kudu表。
 * 在preto中 hive orc表和kudu jdbc表可以join
 
 
-create 
+[kudu java jdbc操作kudu](https://github.com/cloudera/kudu/tree/master/examples/java/java-example)
+
+[impala java jdbc操作kudu]
+
+
+
+### impala导出kudu数据成txt文件 适用于T+1
+
+    impala-shell -B --output_delimiter '\001' -i kudu_demo_ip -f your_file -o your_output_file
+
+
+
+### impala直接
+
+
 
 
 
