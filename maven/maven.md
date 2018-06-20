@@ -138,20 +138,6 @@
 
 
 
-## maven 设置编译版本为java8 设置字符集为utf8
-    <project>  
-    
-        ...  
-    
-        <properties>  
-            <maven.compiler.source>1.8</maven.compiler.source>  
-            <maven.compiler.target>1.8</maven.compiler.target>  
-            <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>  
-        </properties>  
-    
-        ...  
-    
-    </project>  
 
 
 
