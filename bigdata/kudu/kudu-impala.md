@@ -367,6 +367,49 @@ presto不能读impala建的kudu表。
 
 
 
+## [spark读kudu](https://www.jianshu.com/p/ef1a621fc6ea)
+1. pom依赖
+
+  <!-- https://mvnrepository.com/artifact/org.apache.kudu/kudu-client -->
+        <dependency>
+            <groupId>org.apache.kudu</groupId>
+            <artifactId>kudu-client</artifactId>
+            <version>1.5.0-cdh5.13.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.kudu/kudu-client-tools -->
+        <dependency>
+            <groupId>org.apache.kudu</groupId>
+            <artifactId>kudu-client-tools</artifactId>
+            <version>1.5.0-cdh5.13.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.kudu/kudu-spark2 -->
+        <dependency>
+            <groupId>org.apache.kudu</groupId>
+            <artifactId>kudu-spark2_2.11</artifactId>
+            <version>1.6.0</version>
+        </dependency>
+version看环境装的版本
+2. 
+    SparkConf conf=new SparkConf().setAppName("your.app.name").setMaster("yarn");
+    SparkContext sparkContext=new SparkContext(conf);
+    SparkSession sparkSession = sparkContext.builder().sparkContext(sparkContext).getOrCreate();
+    List<StructField> fields = Arrays.asList(
+            DataTypes.createStructField("key", DataTypes.StringType, true),
+            DataTypes.createStructField("value", DataTypes.StringType, true));
+    StructType schema = DataTypes.createStructType(fields);
+    Dataset ds =  sparkSession.read().format("org.apache.kudu.spark.kudu").
+            schema(schema).option("kudu.master","10.1.0.20:7051").option("kudu.table","TestKudu").load();
+    ds.createOrReplaceTempView("abc");
+    sparkSession.sql("select * from abc").show();
+3. 打包执行 
+maven 依赖打成一个jar, 程序打成一个jar。  因为依赖通常不变，程序经常变。
+
+    spark2-submit --master yarn --jars dependency.jar --class packge.path.classname your.jar
+
+
 
 
 
