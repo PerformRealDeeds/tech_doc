@@ -128,7 +128,48 @@
 
 
 ## 生命周期
+ 三套生命周期
 
+　　Maven定义了三套生命周期：clean、default、site，每个生命周期都包含了一些阶段（phase）。三套生命周期相互独立，但各个生命周期中的phase却是有顺序的，且后面的phase依赖于前面的phase。执行某个phase时，其前面的phase会依顺序执行，但不会触发另外两套生命周期中的任何phase。
+
+1. clean生命周期
+
+        pre-clean    ：执行清理前的工作；
+        clean    ：清理上一次构建生成的所有文件；
+        post-clean    ：执行清理后的工作
+2. default生命周期 
+
+default生命周期是最核心的，它包含了构建项目时真正需要执行的所有步骤。
+
+        validate
+        initialize
+        generate-sources
+        process-sources
+        generate-resources
+        process-resources    ：复制和处理资源文件到target目录，准备打包；
+        compile    ：编译项目的源代码；
+        process-classes
+        generate-test-sources
+        process-test-sources
+        generate-test-resources
+        process-test-resources
+        test-compile    ：编译测试源代码；
+        process-test-classes
+        test    ：运行测试代码；
+        prepare-package
+        package    ：打包成jar或者war或者其他格式的分发包；
+        pre-integration-test
+        integration-test
+        post-integration-test
+        verify
+        install    ：将打好的包安装到本地仓库，供其他项目使用；
+        deploy    ：将打好的包安装到远程仓库，供其他项目使用；
+3. site生命周期
+
+        pre-site
+        site    ：生成项目的站点文档；
+        post-site
+        site-deploy    ：发布生成的站点文档
 
 
 
@@ -157,8 +198,24 @@
 ## maven插件
 [maven-assembly-plugin例子](https://maven.apache.org/plugins/maven-assembly-plugin/examples/single/filtering-some-distribution-files.html)
 
+## maven 同路径同类名的类重复
+module-c依赖module-a和module-b, a和b有相同路径，相同类名的类，在c中引用这个类的归属模块（例如org.module.Repeat类在a和b的模块中）时，取决于声明a或者b的顺序，先声明的类先被ClassLoader加载。 
+模块a中类A依赖同包类B的一个方法method-x，模块b有同路径同类名的类B，但是没有method-x，如果模块b中的类B先加载，就会导致模块a中的类A出错，会报java.lang.NoSuchMethodError的异常。解决方法：排除模块b或者声明模块a。
+通常不会有这种情况，因为路径中的模块名通常不一样。通常是同一个jar的不同版本。
 
+## [maven 建立有META-INF/services的jar包](https://stackoverflow.com/questions/17531625/how-to-include-a-config-file-in-the-meta-inf-services-folder-of-a-jar-using-ma)
+Java SPI用到。
+Create a new source folder with the location `src/main/resources`, then create your `META-INF/services` folder in there and drop in your FQCN file. This should copy them into the jar file automatically. So you'll have:
 
+Project
+| src
+| | main
+|   | java
+|     | [your source code]
+|   | resources
+|     | META-INF
+|       | services
+|         | [your service files]
 
 
 
