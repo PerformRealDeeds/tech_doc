@@ -22,3 +22,4 @@ $PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是
 5. 永久添加环境变量(影响所有用户) vim /etc/profile 在文档最后，添加:export PATH="/opt/STM/STLinux-2.3/devkit/sh4/bin:$PATH" 保存，退出，然后运行：source /etc/profile
 
 
+ shopt | grep huponexit 后台进程在回话关闭后是否停止， off：不会停止后台线程
