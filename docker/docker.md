@@ -7,13 +7,10 @@
 
 * 如果已经有了git，docker-toolboox安装时可以不勾选git选项，安装成功后在桌面快捷方式中改变git的安装路径
 
+## docker 资料
+[Docker 入门教程](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 
 ----------------------
-开启docker时链接阿里云：在D:\Program\Docker Toolbox\start.sh末尾加入
-
-    sh docker-machine ssh default "echo    'EXTRA_ARGS=\"--registry-mirror=https://pee6w651.mirror.aliyuncs.com\"' | sudo tee -a  /var/lib/boot2docker/profile"
-    sh docker-machine restart default 
-
 
 [docker国内镜像](https://blog.csdn.net/bwlab/article/details/50542261)
 
@@ -40,8 +37,33 @@
 
     您可以使用如下的脚本将mirror的配置添加到docker daemon的启动参数中。
 
-    docker-machine ssh default "echo    'EXTRA_ARGS=\"--registry-mirror=https://pee6w651.mirror.aliyuncs.com\"' | sudo tee -a  /var/lib/boot2docker/profile"
+    docker-machine ssh default "echo    'EXTRA_ARGS=\"--registry-mirror=https://xxxxxxxxx.mirror.aliyuncs.com\"' | sudo tee -a  /var/lib/boot2docker/profile"
     docker-machine restart default 
 
 
     D:\Program\Git\bin\bash.exe --login -i "D:\Program\Docker Toolbox\start.sh"
+
+
+docker info 命令Registry显示是否是阿里云。
+
+
+###  运行ubuntu bash
+docker run -it ubuntu bash 
+
+### 运行docker hello-world
+docker container run hello-world
+### docker hello-world 运行步骤
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+
+docker pull registry.cn-hangzhou.aliyuncs.com/kaibb/hadoop
+docker run -it registry.cn-hangzhou.aliyuncs.com/kaibb/hadoop bash 
+
+[hadoop-docker](https://hub.docker.com/r/sequenceiq/hadoop-docker/)
+
