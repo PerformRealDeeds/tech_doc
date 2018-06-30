@@ -9,9 +9,16 @@ hive 分隔符默认值
 hive字段分隔符默认 ASCII 001(ctrl-A), 行分隔符\n.
 hive行分隔符不能修改，因为行分隔符取决于hadoop.
 
-动态分区设置
+## 动态分区设置
 set hive.exec.dynamic.partition=true;
 set hive.exec.dynamic.partition.mode=nonstrict; 
 SET hive.exec.max.dynamic.partitions=10000;
 SET hive.exec.max.dynamic.partitions.pernode=1000;
 
+set hive.execution.engine=spark;
+set spark.app.name=your_app_name;
+set spark.executor.memory=5g;
+set spark.executor.cores=1;
+set spark.executor.instances=15;
+set spark.drive.extraJavaOptions=-XX:+UseG1GC
+set spark.executor.extraJavaOptions=-XX:+UseG1GC
