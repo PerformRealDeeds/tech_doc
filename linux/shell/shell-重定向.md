@@ -1,0 +1,1 @@
+[重定向博客](https://www.cnblogs.com/f-ck-need-u/p/8727401.html)
