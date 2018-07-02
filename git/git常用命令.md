@@ -1,0 +1,1 @@
+  git clone -b dubbo-2.5.6  https://github.com/ap^Che/incubator-dubbo.git dubbo-2.5.6 # 克隆到指定目录
