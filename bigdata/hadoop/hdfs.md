@@ -2,7 +2,7 @@ hdfs 显示所有的hdfs命令
 hdfs getconf
 
 [hdfs dfs](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html)
-### put 
+### put 本地文件或者标准输入 -> hdfs文件
 Usage: `hadoop fs -put [-f] [-p] [-l] [-d] [ - | <localsrc1> .. ]. <dst>`
 
 Copy single src, or multiple srcs from local file system to the destination file system. Also reads input from stdin and writes to destination file system if the source is set to “-”
