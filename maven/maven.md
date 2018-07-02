@@ -1,3 +1,10 @@
+Maven本质上是一个插件执行框架.
+
+---
+ javax.tools.JavaCompiler
+
+
+---
 ## 安装
 1. 上[maven官网](https://maven.apache.org/download.cgi)下载压缩包
 2. 添加bin目录到环境变量
@@ -16,6 +23,7 @@
 ## 资料
 * 《《Maven实战》》
 * [maven官网](https://maven.apache.org/)
+* [maven插件](https://maven.apache.org/plugins/)
 * [pom](http://maven.apache.org/pom.html)
 
 
