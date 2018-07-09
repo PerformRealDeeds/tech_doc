@@ -22,3 +22,10 @@ set spark.executor.cores=1;
 set spark.executor.instances=15;
 set spark.drive.extraJavaOptions=-XX:+UseG1GC
 set spark.executor.extraJavaOptions=-XX:+UseG1GC
+
+## hive order by null
+* order by col [asc] : null 放在最前面,让null放在最后面的方法:
+        * order by col nulls last
+        * order by nvl(col,一个最大的值)
+* order by col desc : null 默认放在末尾,让null放在最前面的方法:
+        * order by col desc
