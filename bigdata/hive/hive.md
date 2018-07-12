@@ -29,3 +29,23 @@ set spark.executor.extraJavaOptions=-XX:+UseG1GC
         * order by nvl(col,一个最大的值)
 * order by col desc : null 默认放在末尾,让null放在最前面的方法:
         * order by col desc
+
+
+
+
+## 开启update delete [参考](https://blog.csdn.net/suijiarui/article/details/51174406)
+set hive.txn.manager=org.apache.hadoop.hive.ql.lockmgr.DbTxnManager;
+
+* 必须分桶不排序, orc格式, 设置事务属性
+* update单列,不支持
+
+        create table student(
+        id int,
+        name String,
+        sex varchar(2),
+        birthday varchar(10),
+        major varchar(1)
+        )
+        clustered by (id) into 2 buckets 
+        stored as orc 
+        TBLPROPERTIES('transactional'='true');

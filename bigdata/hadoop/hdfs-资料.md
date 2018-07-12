@@ -1,0 +1,1 @@
+https://data-flair.training/blogs/hadoop-hdfs-data-read-and-write-operations/#21_Hadoop_HDFS_Data_Write_Operation
