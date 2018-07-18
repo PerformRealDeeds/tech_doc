@@ -76,12 +76,12 @@ ROLLBACK_VERSION:v1.1
 
 解决方法：
 
-IFS_old=$IFS
-IFS=$'\n'
-for line in  `cat  rollback_config`;do
-echo "$line"
-done;
-IFS=$IFS_old
+    IFS_old=$IFS
+    IFS=$'\n'
+    for line in  `cat  rollback_config`;do
+    echo "$line"
+    done;
+    IFS=$IFS_old
 
 这样一来就可以了！
 

@@ -49,3 +49,6 @@ set hive.txn.manager=org.apache.hadoop.hive.ql.lockmgr.DbTxnManager;
         clustered by (id) into 2 buckets 
         stored as orc 
         TBLPROPERTIES('transactional'='true');
+
+
+## [hive jdbc格式](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients)
