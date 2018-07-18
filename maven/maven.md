@@ -215,19 +215,30 @@ module-c依赖module-a和module-b, a和b有相同路径，相同类名的类，�
 Java SPI用到。
 Create a new source folder with the location `src/main/resources`, then create your `META-INF/services` folder in there and drop in your FQCN file. This should copy them into the jar file automatically. So you'll have:
 
-Project
-| src
-| | main
-|   | java
-|     | [your source code]
-|   | resources
-|     | META-INF
-|       | services
-|         | [your service files]
+    Project
+    | src
+    | | main
+    |   | java
+    |     | [your source code]
+    |   | resources
+    |     | META-INF
+    |       | services
+    |         | [your service files]
 
+## [mavnen默认生命周期绑定](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference)
 
+    Clean Lifecycle Bindings
+    clean	clean:clean
 
-
+    Default Lifecycle Bindings - Packaging ejb / ejb3 / jar / par / rar / war
+    process-resources	resources:resources
+    compile	                compiler:compile
+    process-test-resources	resources:testResources
+    test-compile	        compiler:testCompile
+    test	                surefire:test
+    package	                ejb:ejb or ejb3:ejb3 or jar:jar or par:par or rar:rar or war:war
+    install	                install:install
+    deploy	                deploy:deploy
 
 
 
