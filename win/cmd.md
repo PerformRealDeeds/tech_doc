@@ -50,3 +50,10 @@
         interval      重新显示选定的统计，各个显示间暂停的间隔秒数。
                         按 CTRL+C 停止重新显示统计。如果省略，则 netstat
                         将打印当前的配置信息一次。
+
+## Windows命令行查看文件的MD5
+        certutil -hashfile yourfilename.ext MD5
+        certutil -hashfile yourfilename.ext SHA1
+        certutil -hashfile yourfilename.ext SHA256
+
+
