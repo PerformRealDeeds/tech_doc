@@ -8,6 +8,7 @@ set global general_log='off'; -- 注意: 最后要关闭
 ## mysql版本
 select version();
 
+## 怀疑并发线程影响了查询,用 `show [full] processlist;` 或者 `select * from information_schema.processlist;` 显示进程的状态
 
 
 
