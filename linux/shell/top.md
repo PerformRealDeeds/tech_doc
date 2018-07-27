@@ -7,3 +7,4 @@
     ni, nice:time running niced user proceses
     sy, system: time runin
   
+## top后按大写M按照内存使用率排序,按大写P按照CPU使用率排序

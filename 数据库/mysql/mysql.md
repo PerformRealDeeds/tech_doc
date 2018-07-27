@@ -1,0 +1,1 @@
+## mysql 用tinyint表示boolean,  DO对象类型是boolean
