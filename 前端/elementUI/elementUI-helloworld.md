@@ -8,4 +8,6 @@
 
 ----
 
-## [elementUI使用项目](https://github.com/yinjihuan/vue-elementui)
+## elementUI使用项目
+* https://github.com/PanJiaChen/vue-element-admin
+* https://github.com/yinjihuan/vue-elementui

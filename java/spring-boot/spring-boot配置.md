@@ -1,3 +1,5 @@
+[application.propertis 所有配置](https://docs.spring.io/spring-boot/docs/2.0.4.RELEASE/reference/htmlsingle/#common-application-properties) 
+ 
  ##日志
     debug=true  #核心Logger（包含嵌入式容器、hibernate、spring）会输出更多内容，但是你自己应用的日志并不会输出为DEBUG级别
 
