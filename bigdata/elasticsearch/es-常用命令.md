@@ -5,7 +5,7 @@
       windows下 json内部数据要用转义双引号,并用双引号包着json数据
       
 * 获取索引     `curl -XGET ‘http://localhost:9200/{index}/{type}/{id}’`
-* 删除索引    `curl -XDELETE http://localhost:9200/{index}`
+* 删除索引    `curl -XDELETE http://localhost:9200/{index}`   [官网文档](https://www.elastic.co/guide/en/elasticsearch/reference/5.6/_deleting_documents.html)
 * 查看索引结构    浏览器 `localhost:9200/index_name/_mapping?pretty`
 
 ## curl localhost:9200/_cat
