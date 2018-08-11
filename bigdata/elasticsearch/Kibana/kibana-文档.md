@@ -1,0 +1,1 @@
+[kibana文档](https://www.elastic.co/guide/en/kibana/5.6/index.html)

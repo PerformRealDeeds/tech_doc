@@ -99,24 +99,24 @@ A,B,...,Z        匹配多个值
 
 ## hive -> es 
 ### 1. 加入hive jdbc依赖包(mysql jdbc没有依赖包,hive jdbc有很多依赖包,在maven引入hive-jdbc后把所有的依赖都打入一个单独的jar中), 在`confg/jvm.options`中加入依赖包的目录
-    ## hive jdbc驱动 目录 (含hive jdbc驱动依赖)
+    # hive jdbc驱动 目录 (含hive jdbc驱动依赖)
     -Djava.ext.dirs=../lib/hive_jdbc_lib
 ### 2.hive-to-es.conf配置
 单输入单输出
 
         input {
             jdbc {
-                #因为在-Djava.ext.dirs指定了hive jdbc包,随便写个参数就好
+                # 因为在-Djava.ext.dirs指定了hive jdbc包,随便写个参数就好
                 jdbc_driver_library => "/path/to/hive-jdbc-2.2.0.jar"
                 jdbc_driver_class => "org.apache.hive.jdbc.HiveDriver"
-                ## hive jdbc格式参考(https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients)
+                # hive jdbc格式参考(https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients)
                 jdbc_connection_string => "jdbc:hive2://ip:10000/default;;?hive.execution.engine=spark"
                 jdbc_user => "usr_nm"
                 jdbc_password => ""
-                // 语法参考 [schedule 语法](https://www.cnblogs.com/ycyzharry/p/7598337.html)    0 */12 * * * 表示每天每隔12个小时整点执行一次
+                # 语法参考 [schedule 语法](https://www.cnblogs.com/ycyzharry/p/7598337.html)    0 */12 * * * 表示每天每隔12个小时整点执行一次
                 schedule => "* * * * *"
                 jdbc_default_timezone => "Asia/Shanghai"
-                ## hive必须写列名,不然默认 tbl.col  会多表名.
+                # hive必须写列名,不然默认 tbl.col  会多表名.
                 statement => "SELECT * FROM db.tbl;"
             }
         }
@@ -125,7 +125,7 @@ A,B,...,Z        匹配多个值
                 index => "dbNm"
                 document_type => "tblNm"
                 document_id => "%{idCol}"
-                hosts => ["es:9200"]
+                hosts => ["ip:9200"]
             }
         }
 
