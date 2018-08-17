@@ -1,7 +1,7 @@
 ## [logstash 安装使用](https://www.elastic.co/downloads/logstash)
 1. 下载解压 Logstash  执行 `logstash -e "input{ stdin{} } output{ stdout{} }"`看看是否可用
 2. 准备配置文件logstash-test.conf 
-3. 运行 `bin/logstash -f logstash.conf`
+3. 运行 `bin/logstash -f logstash.conf`  后台运行时使用 nohup 命令 & 
 
 
 

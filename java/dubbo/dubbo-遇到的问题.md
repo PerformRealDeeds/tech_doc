@@ -25,3 +25,10 @@
 多写了http://,去掉后正常
 
     spring.dubbo.registry.address=zookeeper://ip:2181
+
+
+## dubbo telnet下 invoke 报错
+    invoke sayHello("abc")
+    Invalid json argument, cause: com/alibaba/fastjson/JSON
+
+需要引入fastjson依赖

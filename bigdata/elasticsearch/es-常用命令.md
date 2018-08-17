@@ -27,3 +27,13 @@
     }
     }'
 
+## [删除类型(类似数据库的表))](https://blog.csdn.net/youzhouliu/article/details/79940729)
+
+    POST edemo/test/_delete_by_query?conflicts=proceed
+    {
+    "query": {
+        "match_all": {}
+    }
+    }
+
+
