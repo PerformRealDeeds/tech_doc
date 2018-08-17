@@ -47,3 +47,9 @@ id是String,不要使用这个排序
 
 然后执行成功。
 
+## hive 写 es时 org.elasticsearch.hadoop.rest.EsHadoopInvalidRequest: Found unrecoverable error [XXX:9200] returned Bad Request(400) - failed to parse [XXX]; Bailing out..
+https://blog.csdn.net/dpnice/article/details/80269853
+
+删除、重建索引
+
+或者在新的索引下建表，  同一个索引（库）下不能有两个同名不同类型的字段。

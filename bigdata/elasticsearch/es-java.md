@@ -11,4 +11,12 @@ String是id列的类型
 
     public interface CustomerRepository extends ElasticsearchRepository<Customer, String> {
 
-## 
+## 多个条件搜索
+Page<SomePo> findByAttr1AndAttr2AndAttr3BetweenAdnStartTmBetween(Sting attr1, Integer attr2, Integer attr3From, Integer attr3To, Long startTmFrom ,Long startTmTo)
+
+* attr1 字符串
+* attr2 整数
+* attr3 范围
+* startTm 范围 只接受long
+
+null表示忽略这个条件，否则是多个条件的与

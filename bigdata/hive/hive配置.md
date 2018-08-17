@@ -13,3 +13,15 @@
 
 ##  hive sql中的变量
     set hivevar:EYDT=2018-01-01
+
+
+ hive  -hiveconf hive.execution.engine=spark \
+       -hiveconf mapreduce.job.queuename=group1 \
+       -hiveconf mapreduce.job.queuename=zhangce \
+       -hiveconf spark.executor.instances=1 \
+       -hiveconf spark.executor.memory=1g \
+       -hiveconf spark.executor.cores=1 \
+    -v 
+
+
+
