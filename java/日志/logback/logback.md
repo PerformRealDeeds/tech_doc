@@ -468,7 +468,11 @@ logback配置文件中有[0,+∞)个appender,[0,+∞)个logger,至多一个root�
 
 必须理解[level inheritance](https://logback.qos.ch/manual/architecture.html#effectiveLevel)和 [the basic selection](rulehttps://logback.qos.ch/manual/architecture.html#effectiveLevel).
 
-`<logger>` 必填属性:`name` ,可选属性:`level`, `additivity `.  `level`的大小写`不敏感`, INFO或者info都可以. 所有的level的值:TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF.
+`<logger>` 必填属性:`name` ,可选属性:`level`, `additivity `. 
+
+`level`的大小写`不敏感`, INFO或者info都可以. 
+
+所有的level的值:TRACE, DEBUG, INFO, WARN, ERROR, ALL or OFF.
 
 `<logger>`包含[0,+∞)个`<appender-ref>`,每个appender被加入logger. 与log4j不同,logback不能关闭或者移除先前的appenders.
 
