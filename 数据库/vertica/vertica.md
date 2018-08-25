@@ -15,3 +15,5 @@ vertica 时间差
 
 
 
+## vertica 字符串连接：
+    select '1' || 'a' || 5;
