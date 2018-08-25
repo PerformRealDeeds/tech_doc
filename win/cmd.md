@@ -2,7 +2,7 @@
 * 资源管理器中的路径中输入cmd进入cmd,路径是当前路径
 * 开始菜单输入cmd
 * win+R打开运行，输入cmd
-
+* cmd(管理员) 开始菜单右键->命令提示符(管理员)
 ---
 
     netsh wlan show profile                                          #查看wlan名称
@@ -57,3 +57,32 @@
         certutil -hashfile yourfilename.ext SHA256
 
 
+## 
+
+## ping   应用层命令
+目的: 查看网络层ip的连通性 
+
+同时可以查看域名对映的ip
+
+例子: ping baidu.com
+
+
+## tracert
+TTL(Time To Live): IP包被路由器丢弃之前允许通过的最大网段数量
+
+例子: tracert  baidu.com
+
+## arp 
+目的: 查看目的ip对应的mac地址 网络层只认识ip,数据链路层只认识mac
+
+原理:目的ip和源ip同网段时, 发送广播,请求目的ip发送目的mac给源ip;    目的ip和源ip不在同一个网段时,发送数据帧给网关.
+
+## 反向arp
+通过mac获取ip
+
+例子:DHCP的过程,无盘工作站
+
+## osi 7层协议
+物理层: 网卡
+数据链路层: 交换机   mac地址
+网络层:路由器   ip地址

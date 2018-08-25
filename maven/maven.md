@@ -109,16 +109,16 @@ Maven本质上是一个插件执行框架.
 
 2. 在maven的安装目录找到settings.xml文件，在里面添加如下代码
 
-        profile>      
+        <profile>      
              <id>jdk-1.7</id>      
               <activation>      
                    <activeByDefault>true</activeByDefault>      
                    <jdk>1.7</jdk>      
                </activation>      
          <properties>      
-        maven.compiler.source>1.7</maven.compiler.source>      
-        maven.compiler.target>1.7</maven.compiler.target>      
-        maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>             
+        <maven.compiler.source>1.7</maven.compiler.source>      
+        <maven.compiler.target>1.7</maven.compiler.target>      
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>             
         </properties>      
         </profile>    
 
