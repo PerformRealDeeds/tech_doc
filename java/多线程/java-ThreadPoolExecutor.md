@@ -7,4 +7,18 @@
     for (Future<?> future:futures) {
         future.get();
     }
-    
+
+
+
+
+
+用`ThreadPoolExecutor.submit()`,`ThreadPoolExecutor. shutdown()`组合
+
+for(int i=0;i<10;i++){
+    Future<?> f = threadPoolExecutor.submit(new Runnable(){public void run()});
+    futures.add(f);
+}
+threadPoolExecutor.shutdown();
+  for (Future<?> future:futures) {
+        future.get();
+    }
