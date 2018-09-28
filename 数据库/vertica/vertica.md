@@ -17,3 +17,8 @@ vertica 时间差
 
 ## vertica 字符串连接：
     select '1' || 'a' || 5;
+
+## vertica 该表名  
+    ALTER TABLE db.tbl_nm RENAME TO tbl_nm1; 
+注意：在vertica中`rename to`后面的参数不能带库名。
+
