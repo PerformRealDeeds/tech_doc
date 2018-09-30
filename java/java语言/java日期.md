@@ -23,3 +23,7 @@
 
 ## 昨天
  LocalData.now.minusDays(1).format(DateTimeFormatter.BASIC_ISO_DATA);
+
+## [java 日期](http://www.cnblogs.com/Matrix54/archive/2012/05/01/2478158.html)
+    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+    System.out.println(df.format(new Date()));// new Date()为获取当前系统时间

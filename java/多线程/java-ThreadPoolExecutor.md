@@ -9,6 +9,7 @@
     }
 
 
+<<<<<<< HEAD
  ## [线程池例子](https://www.journaldev.com/1069/threadpoolexecutor-java-thread-pool-example-executorservice)   
 
      ExecutorService executor = Executors.newFixedThreadPool(5);
@@ -20,3 +21,18 @@
         while (!executor.isTerminated()) {
         }
         System.out.println("Finished all threads");
+=======
+
+
+
+用`ThreadPoolExecutor.submit()`,`ThreadPoolExecutor. shutdown()`组合
+
+for(int i=0;i<10;i++){
+    Future<?> f = threadPoolExecutor.submit(new Runnable(){public void run()});
+    futures.add(f);
+}
+threadPoolExecutor.shutdown();
+  for (Future<?> future:futures) {
+        future.get();
+    }
+>>>>>>> e230c69711d9f068e02000fde101f352d9b90253
