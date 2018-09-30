@@ -7,3 +7,13 @@
 ## java eclipse 编码风格
 https://github.com/svn2github/google-styleguide/blob/master/eclipse-java-google-style.xml
 https://google.github.io/styleguide/eclipse-java-google-style.xml
+
+
+
+
+
+## 导入普通java工程 非maven
+java->new Java Project
+
+
+

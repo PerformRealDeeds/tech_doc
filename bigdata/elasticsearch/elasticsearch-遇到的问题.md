@@ -53,3 +53,29 @@ https://blog.csdn.net/dpnice/article/details/80269853
 删除、重建索引
 
 或者在新的索引下建表，  同一个索引（库）下不能有两个同名不同类型的字段。
+
+
+
+
+## ERROR: [2] bootstarp checks failed 
+[1]: max file descriptors [4096] for elasticsearch process is too low, increase to at least [65536]
+[2]: max virtual memory ares vm.max_map_count [65530] is to low, increase to at least [262144]
+
+### 问题1： [参考](https://www.cnblogs.com/yidiandhappy/p/7714481.html)
+#切换到root用户修改
+vim /etc/security/limits.conf
+# 在最后面追加下面内容
+*** hard nofile 65536
+*** soft nofile 65536
+ 
+***  是启动ES的用户
+### 问题2：[参考](https://www.jianshu.com/p/4c6f9361565b)
+vi /etc/sysctl.conf 
+添加下面配置：
+vm.max_map_count=655360
+并执行命令：
+sysctl -p
+然后，重新启动elasticsearch，即可启动成功。
+
+
+

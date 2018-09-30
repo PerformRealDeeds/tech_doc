@@ -11,7 +11,7 @@
 3. curl localhost:9200 #验证
 ### 2. daemon运行
 
-1. 启动  `cd $$ES_HOME`, 执行`./bin/elasticsearch -d -p pid`  
+1. 启动  `cd $$ES_HOME`, 执行`./bin/elasticsearch -d -p pid`    # 最好先用前台运行的方式运行一下，看看是否有什么问题
    * -d: 指定时daemon
    * -p: 记录进程id的文件名 
 2. curl localhost:9200 #验证
