@@ -18,3 +18,11 @@
     For example, if the fully qualified name for your test class was com.example.test.JpaTest and the one for your application was com.example.Application, then your test class would be able to find the @SpringBootApplication (and therein, the @SpringBootConfiguration).
 
     If the application resided in a different branch of the package hierarchy, however, like com.example.application.Application, it would not find it.
+    
+   
+  
+ 
+## - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template "module/student/upload", template might not exist or might not be accessible by any of the configured Template Resolvers] with root causeorg.thymeleaf.exceptions.TemplateInputException: Error resolving template "module/student/upload", template might not exist or might not be accessible by any of the configured Template Resolvers
+    @PostMapping("/upload")
+    @ResponseBody
+原因：漏掉了@ResponseBody，然后就认为返回房爷， @PostMapping要和@ResponseBody一起用。

@@ -1,0 +1,14 @@
+//省市区级联 https://blog.csdn.net/sinat_35010585/article/details/51591705
+		function promptinfo() {
+			var s1 = document.getElementById('schPvc').value;
+			var s2 = document.getElementById('schCty').value;
+			var s3 = document.getElementById('schArea').value;
+			var address = "" + s1 + s2 + s3;
+			return address;
+		}
+
+		$(function() {
+			setup('schPvc', 'schCty', 'schArea');
+			preselect('广东省');
+			promptinfo();
+		})
