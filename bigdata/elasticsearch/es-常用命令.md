@@ -16,8 +16,9 @@
 
     curl -XDELETE 'http://localhost:9200/{index}/{type}/{id}?timeout=5m'
 
-按照查询条件删除数据
-
+按照查询条件删除数据  数据量很大时，执行很慢，cpu使用率很高
+```
+kinbana
     curl -XPOST 'localhost:9200/{index}/{type}/_delete_by_query?pretty' -d'
     {
     "query": { 
@@ -26,6 +27,14 @@
         }
     }
     }'
+curl
+ curl -XPOST "http:ip:9200/db/table/delete_by_query?conflicts=proceed" -H 'Content-Type: application/json' -d'
+ {
+     "query":{
+         "match_all":{}
+     }
+ }'
+```
 
 ## [删除类型(类似数据库的表))](https://blog.csdn.net/youzhouliu/article/details/79940729)
 

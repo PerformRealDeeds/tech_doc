@@ -17,3 +17,8 @@
 
 [参考博客](https://blog.csdn.net/aitangyong/article/details/53332091)
 [参考官网](http://maven.apache.org/pom.html)
+
+mvn clean deploy -DskipTests
+
+
+

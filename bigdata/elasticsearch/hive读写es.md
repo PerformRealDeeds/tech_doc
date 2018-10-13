@@ -1,7 +1,7 @@
 https://blog.csdn.net/u013063153/article/details/60757307
 
 
-add jar file:///home/liuxiaowen/elasticsearch-hadoop-2.2.0-beta1/dist/elasticsearch-hadoop-hive-2.2.0-beta1.jar;
+add jar file:///home/xxx/elasticsearch-hadoop-2.2.0-beta1/dist/elasticsearch-hadoop-hive-2.2.0-beta1.jar;
 
 
 CREATE EXTERNAL TABLE zc_test.ust_voice (
@@ -12,7 +12,7 @@ col_tm   timestamp
  )
 STORED BY 'org.elasticsearch.hadoop.hive.EsStorageHandler'
 TBLPROPERTIES(
-'es.nodes' = '10.75.211.157:9200',
+'es.nodes' = '10.xx.xx.xx:9200',
 'es.index.auto.create' = 'true',
 'es.resource' = 'ust/voice',
 'es.mapping.id' = 'id',
@@ -22,7 +22,7 @@ insert into zc_test.ust_test select 1,"abc",55,current_timestamp;
 
 insert into zc_test.ust_test select 2,"bcd";
 
-add jar file:/root/app/zhangce/lib/elasticsearch-hadoop-hive-5.6.10.jar;
+add jar file:/root/app/xxx/lib/elasticsearch-hadoop-hive-5.6.10.jar;
 
 
 
