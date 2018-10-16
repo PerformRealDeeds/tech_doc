@@ -25,6 +25,7 @@ Maven本质上是一个插件执行框架.
 * [maven官网](https://maven.apache.org/)
 * [maven插件](https://maven.apache.org/plugins/)
 * [pom](http://maven.apache.org/pom.html)
+* [mirror配置](http://maven.apache.org/guides/mini/guide-mirror-settings.html)
 
 
 ---
