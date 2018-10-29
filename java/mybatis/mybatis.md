@@ -265,3 +265,11 @@ set的等价形式
                     #{item}
             </foreach>
     </select>
+    
+    
+### 自增主键回填传入对象  需要数据库设置成自增主键
+	<insert id="insertAuthor" useGeneratedKeys="true"  keyProperty="id">
+	  insert into Author (username,password,email,bio)
+	  values (#{username},#{password},#{email},#{bio})
+	</insert>
+运行后，传入前的Author对象的id是null，执行后是有值的。
