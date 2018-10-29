@@ -22,3 +22,8 @@ b join c改成 b inner join c 就好了
         </property>
 
 [参考2](https://blog.csdn.net/github_38358734/article/details/77522798)
+
+## hive cdh5.12 where中date(col_timestamp)后在select col_timestamp后，time全是00:00:00
+select start_tm -- start_tm从 2018-10-25 10:01:02 变成 2018-10-25 00:00:00
+from table
+where date(start_tm)>date'2018-10-25'
