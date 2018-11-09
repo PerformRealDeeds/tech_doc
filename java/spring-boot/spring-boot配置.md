@@ -12,3 +12,8 @@
 spring.thymeleaf.cache: false
 server.tomcat.access_log_enabled: true
 server.tomcat.basedir: target/tomcat
+
+## 一些参考
+[](https://stackoverflow.com/questions/25855795/spring-boot-and-multiple-external-configuration-files)
+[](https://www.baeldung.com/configuration-properties-in-spring-boot)
+

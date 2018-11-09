@@ -20,7 +20,7 @@
 
 2、在项目的pom.xml中增加以下内容
 ```
-<build>
+    <build>
         <plugins>
             <!-- 要将源码放上去，需要加入这个插件 -->
             <plugin>

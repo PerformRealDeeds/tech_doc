@@ -1,4 +1,13 @@
 参考 [BlockingQueue](https://www.cnblogs.com/zaizhoumo/p/7786793.html)
+## threadPoolExecutor 例子
+    threadPoolExecutor.shutdown();
+    while(!threadPoolExecutor.isTerminated()){ // 注意用while不能用if
+        sleep(60s);
+    }
+
+## ArrayBlockingQueue 
+会阻塞的方法：put(E e); take();
+没有停止ArrayBlockingQueue的方法，要put进入一些标记对象，take到这些对象时退出线程。
 ## [stackoverflow threadpoolexecutor](https://stackoverflow.com/questions/3929361/how-to-wait-for-all-tasks-in-an-threadpoolexecutor-to-finish-without-shutting-do)
 
 
