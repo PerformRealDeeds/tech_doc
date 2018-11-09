@@ -10,8 +10,12 @@ select version();
 
 ## 怀疑并发线程影响了查询,用 `show [full] processlist;` 或者 `select * from information_schema.processlist;` 显示进程的状态
 
+## 权限
+* show grants for test_usr; -- 查看 test_usr的权限
+* grant select,insert on db.* to test_usr@'%' ; -- 授予权限
+* GRANT ALL ON db1.* TO 'jeffrey'@'localhost';
+* grant all on newdb.* to newuser@localhost  identified by 'password';
 
-
-
-
-
+## 查找表
+show tables;
+show tables like '%special_name%';
