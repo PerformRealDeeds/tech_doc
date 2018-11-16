@@ -79,3 +79,27 @@ sysctl -p
 
 
 
+## [查询es最多返回10条记录](https://docs.spring.io/spring-data/elasticsearch/docs/3.1.2.RELEASE/reference/html/)
+要超过10条的限制，要用Page或者Sort. Sort需要在Spring Boot的依赖中引入DSL的依赖。Spring-Boot没有明确引入，只是在dependencyManagement中管理了版本。
+
+    <dependency>
+        <groupId>com.querydsl</groupId>
+        <artifactId>querydsl-core</artifactId>
+    </dependency>
+
+
+        Example 16. Limiting the result size of a query with Top and First
+
+        User findFirstByOrderByLastnameAsc();
+
+        User findTopByOrderByAgeDesc();
+
+        Page<User> queryFirst10ByLastname(String lastname, Pageable pageable); // Ctrl+T 看Pageable接口的实现类。 PageRequest.of(0,1000); // 这样最多返回1000条。
+
+        Slice<User> findTop3ByLastname(String lastname, Pageable pageable);
+
+        List<User> findFirst10ByLastname(String lastname, Sort sort);
+
+        List<User> findTop10ByLastname(String lastname, Pageable pageable);
+
+
