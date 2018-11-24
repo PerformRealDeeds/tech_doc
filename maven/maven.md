@@ -244,3 +244,28 @@ Create a new source folder with the location `src/main/resources`, then create y
 
 
     
+
+    
+    
+## profile 在pom.xml允许出现的元素
+	<project>
+	    <profiles>
+	        <profile>
+	            <build>
+	                <defaultGoal>...</defaultGoal>
+	                <finalName>...</finalName>
+	                <resources>...</resources>
+	                <testResources>...</testResources>
+	                <plugins>...</plugins>
+	            </build>
+	            <reporting>...</reporting>
+	            <modules>...</modules>
+	            <dependencies>...</dependencies>
+	            <dependencyManagement>...</dependencyManagement>
+	            <distributionManagement>...</distributionManagement>
+	            <repositories>...</repositories>
+	            <pluginRepositories>...</pluginRepositories>
+	            <properties>...</properties>
+	        </profile>
+	    </profiles>
+	</project>   

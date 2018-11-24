@@ -1,5 +1,5 @@
 ## java path
-目的：在任意目录下执行简单的执行JAVA_HOME\bin下的命令，不用输入绝对路径
+目的：在任意目录下执行JAVA_HOME\bin下的命令，不用输入绝对路径
 
 不把`C:\Java\jdk1.7.0\bin`加入windows变量中，javac、java、javadoc命令等需要使用绝对路径，如C:\Java\jdk1.7.0\bin\java
 
@@ -58,6 +58,19 @@ $ echo $CLASSPATH
 ### 一些例子
 * java -classpath C:\java\MyClasses\myclasses.jar utility.myapp.Cool  // Cool类文件必须在myclasses.jar中的utility.myapp目录下，并且utility是myclasses.jar下的一个顶级目录
 * java -classpath C:\java\MyClasses;C:\java\OtherClasses ... //指定多个类路径
+
+-------------------
+## 打印java类路径 参考spring-boot ApplicationEnvironmentPreparedEvent代码
+
+		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		if (classLoader instanceof URLClassLoader) {
+			for (URL url : ((URLClassLoader) classLoader).getURLs()) {
+				System.out.println(url);
+			}
+		}
+
+	 
+
 
 
 
